@@ -13,7 +13,6 @@
     <div class="header">
         <h2>Cyber-Dominators</h2>
     </div>
-
     <form method="post" action="">
         <div class="input-group">
             <label>Enter IP:</label>
