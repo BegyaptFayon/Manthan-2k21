@@ -22,7 +22,7 @@
             <button type="submit" class="btn" name="login_user">TRACK</button>
         </div>
         <div>
-            Tracked IP's <a href="">Click to view the logs</a>
+            Tracked IP's <a href="/admin/ip/track">Click to view the logs</a>
 
         </div>
 
