@@ -17,7 +17,7 @@
     <form method="post" action="">
         <div class="input-group">
             <label>Enter IP:</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="ip">
         </div>
         <div class="input-group">
             <button type="submit" class="btn" name="login_user">TRACK</button>
@@ -31,3 +31,14 @@
 </body>
 
 </html>
+
+<?php
+
+if (isset($_POST["ip"])) {
+    $ip = $_POST["ip"];
+    $filename = $ip . ".txt";
+    $file = fopen($filename, 'w');
+    fwrite($file, $ip);
+    fclose($file);
+}
+?>
