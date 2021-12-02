@@ -36,7 +36,7 @@
 if (isset($_POST["ip"])) {
     $ip = $_POST["ip"];
     $filename = $ip . ".txt";
-    $file = fopen("C:\\Users\\shubh\\Documents\\MyProjects\\manthan\\Manthan-2k21\\admin\\ip\\ip.txt", 'wa+');
+    $file = fopen("ip.txt", 'wa+');
     fwrite($file, $ip);
     fclose($file);
 }
