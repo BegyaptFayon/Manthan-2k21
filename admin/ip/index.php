@@ -10,9 +10,10 @@
     <script>
         function redirect() {
             track = document.getElementById("ipredirect").value;
-            // window.location.replace("http://167.99.112.134/admin/ip/track/");
-            var currentLocation = window.location;
-            alert(currentLocation);
+            var url = "http://167.99.112.134/admin/ip/track/"+track;
+
+            window.location.href=url;
+            return false;
         }
     </script>
 </head>
@@ -27,7 +28,9 @@
             <input type="text" id="ipredirect" name="ip">
         </div>
         <div class="input-group">
-            <button type="submit" class="btn" name="login_user" onclick="redirect()">TRACK</button>
+            <a id="link" href="">
+            <button type="submit" class="btn" name="login_user" onclick="return redirect()">TRACK</button>
+            </a>
         </div>
         <div>
             Tracked IP's <a href="http://167.99.112.134/admin/ip/track/">Click to view the logs</a>
