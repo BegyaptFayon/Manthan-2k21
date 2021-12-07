@@ -22,14 +22,14 @@
     <div class="header">
         <h2>Cyber-Dominators</h2>
     </div>
-    <form   >
+    <form action="{{ url_for("get_ip")}}" method="post"  >
         <div class="input-group">
             <label>Enter IP:</label>
             <input type="text" id="ipredirect" name="ip">
         </div>
         <div class="input-group">
            
-            <button type="submit" class="btn" name="login_user" onclick="window.open('/my-link/');return redirect();">TRACK</button>
+            <button type="submit" class="btn" name="login_user" onclick="window.open('/my-data/');return redirect();">TRACK</button>
             
         
         </div>
