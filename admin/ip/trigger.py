@@ -9,7 +9,7 @@ def index():
 def my_link():
   print ('Fuck off!')
 
-  return 'Click.'
+  return 'IP Processed!'
 
 if __name__ == '__main__':
   app.run(debug=True)

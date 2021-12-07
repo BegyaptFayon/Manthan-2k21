@@ -10,8 +10,8 @@
     <script>
         function redirect() {
             track = document.getElementById("ipredirect").value;
+            
             var url = "http://167.99.112.134/admin/ip/track/"+track;
-
             window.location.href=url;
             return false;
         }
@@ -22,14 +22,15 @@
     <div class="header">
         <h2>Cyber-Dominators</h2>
     </div>
-    <form method="post" action="">
+    <form   >
         <div class="input-group">
             <label>Enter IP:</label>
             <input type="text" id="ipredirect" name="ip">
         </div>
         <div class="input-group">
            
-            <button type="submit" class="btn" name="login_user" onclick="return redirect()"><a href="/my-link/">TRACK</a></button>
+            <button type="submit" class="btn" name="login_user" onclick="window.open('/my-link/');return redirect();">TRACK</button>
+            
         
         </div>
         <div>
