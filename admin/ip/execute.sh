@@ -10,10 +10,10 @@ echo $1 > $1/ip.txt
 cd $1
 
 
-whois -h whois.cymru.com "-v $(cat ip.txt)" |  sed '1,2d' | awk '{print $1}' > asn.txt
+whois -h whois.cymru.com "-v $(cat ip.txt) " |  sed '1,2d' | awk '{print $1}' > asn.txt
 asn=$(cat asn.txt)
 mkdir report
 curl --user-agent "fogent" --silent "https://bgp.potaroo.net/cgi-bin/as-report?as=AS$asn&view=2.0" > report/index.html
-nmap $i -F > nmap.txt
+nmap $1 -F > nmap.txt
 cd ..
 fi
