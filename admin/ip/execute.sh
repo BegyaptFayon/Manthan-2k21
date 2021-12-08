@@ -2,11 +2,14 @@
 #This script is created by shreyanshdadheech
 #To execute the ip address
 
-i = echo $1
-
-if [ -d  /var/www/html/admin/ip/track/$i ]
+if [ -d  track/$1 ]
 then echo ''
-else mkdir /var/www/html/admin/ip/track/$i
+else mkdir track/$1
+cd track
+echo $1 > $1/ip.txt
+cd $1
+
+
 
 echo $i > $i/ip.txt
 cd $i
@@ -17,4 +20,3 @@ curl --user-agent "fogent" --silent "https://bgp.potaroo.net/cgi-bin/as-report?a
 nmap $i -F > nmap.txt
 cd ..
 fi
-done
