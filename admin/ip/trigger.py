@@ -13,8 +13,9 @@ def index():
 def get_ip():
     if request.method == "POST":
         ip = request.form.get("ip")
+        os.system("bash execute.sh " + ip)
         return "Your IP is: " + ip
-    os.system("/bin/bash execute.sh" + ip)
+
     return "divy"
 
 

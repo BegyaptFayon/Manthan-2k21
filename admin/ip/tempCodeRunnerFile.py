@@ -1,1 +1,1 @@
-return file(minetype='text/plain')
+/my-data/
