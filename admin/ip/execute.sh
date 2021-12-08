@@ -10,9 +10,6 @@ echo $1 > $1/ip.txt
 cd $1
 
 
-
-echo $i > $i/ip.txt
-cd $i
 whois -h whois.cymru.com "-v $(cat ip.txt)" |  sed '1,2d' | awk '{print $1}' > asn.txt
 asn=$(cat asn.txt)
 mkdir report
