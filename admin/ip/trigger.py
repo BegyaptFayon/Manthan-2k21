@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import os
+import sys
 app = Flask(__name__)
 
 
@@ -7,19 +9,12 @@ def index():
     return render_template('index.html')
 
 
-# @app.route('/my-link/')
-# def my_link():
-#     print('Fuck off!')
-
-#     return 'IP Processed!'
-
-
 @app.route('/my-data/', methods=["GET", "POST"])
 def get_ip():
     if request.method == "POST":
         ip = request.form.get("ip")
         return "Your IP is: " + ip
-    # return render_template("index.html")
+    os.system("/bin/bash execute.sh" + ip)
     return "divy"
 
 
