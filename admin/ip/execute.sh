@@ -2,14 +2,14 @@
 #This script is created by shreyanshdadheech
 #To execute the ip address
 
-i = cat ip.txt
-
-if [ -d  /var/www/html/admin/ip/track/$i ]
+if [ -d  track/$1 ]
 then echo ''
-else mkdir /var/www/html/admin/ip/track/$i
+else mkdir track/$1
+cd track
+echo $1 > $1/ip.txt
+cd $1
 
-echo $i > $i/ip.txt
-cd $i
+
 whois -h whois.cymru.com "-v $(cat ip.txt)" |  sed '1,2d' | awk '{print $1}' > asn.txt
 asn=$(cat asn.txt)
 mkdir report
@@ -17,4 +17,3 @@ curl --user-agent "fogent" --silent "https://bgp.potaroo.net/cgi-bin/as-report?a
 nmap $i -F > nmap.txt
 cd ..
 fi
-done
