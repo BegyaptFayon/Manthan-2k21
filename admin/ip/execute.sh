@@ -2,7 +2,7 @@
 #This script is created by shreyanshdadheech
 #To execute the ip address
 
-i = cat ip.txt
+i = echo $1
 
 if [ -d  /var/www/html/admin/ip/track/$i ]
 then echo ''
